@@ -4,4 +4,4 @@
 
 __author__ = """Truoc Pham"""
 __email__ = 'truoc.phamkhac@asnet.com.vn'
-__version__ = '0.1.0'
+__version__ = '0.2.0'
