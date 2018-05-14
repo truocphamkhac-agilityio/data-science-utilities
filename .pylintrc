@@ -1,0 +1,4 @@
+# See https://docs.pylint.org/en/latest/reference_guide/features.html
+[MASTER]
+
+load-plugins=pylint_django
