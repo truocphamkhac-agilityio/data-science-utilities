@@ -28,8 +28,7 @@ Features
 
 * Missing Data Statistic
 
->>>
-from data_science_utilities import data_science_utilities
+>>>from data_science_utilities import data_science_utilities
 # make statistic
 missing_data = data_science_utilities.missing_data_stats(df)
 # display statistic
