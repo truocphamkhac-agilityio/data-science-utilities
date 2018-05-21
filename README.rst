@@ -31,68 +31,87 @@ Features
 .. code-block:: console
 
     $ from data_science_utilities import data_science_utilities
+    $
     $ # make statistic
     $ missing_data = data_science_utilities.missing_data_stats(df)
     $ # display statistic
     $ missing_data
 
+
 * Read CSV files from path
 
->>>
-from data_science_utilities import data_science_utilities
-train_path = '../data/raw/train.csv'
-test_path = '../data/raw/test.csv'
-X_train, X_test = data_science_utilities.read_csv_files(train_path, test_path)
+.. code-block:: console
+
+    $ from data_science_utilities import data_science_utilities
+    $
+    $ train_path = '../data/raw/train.csv'
+    $ test_path = '../data/raw/test.csv'
+    $
+    $ X_train, X_test = data_science_utilities.read_csv_files(train_path, test_path)
 
 
 * Plotting distribution normal
 
->>>
-from data_science_utilities import data_science_utilities
-data_science_utilities.plot_dist_norm(dist, 'distribution normal')
+.. code-block:: console
+
+    $ from data_science_utilities import data_science_utilities
+    $
+    $ data_science_utilities.plot_dist_norm(dist, 'distribution normal')
 
 
 * Plotting correlation matrix
 
->>>
-from data_science_utilities import data_science_utilities
-data_science_utilities.plot_corelation_matrix(data)
+.. code-block:: console
+
+    $ from data_science_utilities import data_science_utilities
+    $
+    $ data_science_utilities.plot_corelation_matrix(data)
 
 
 * Plotting top attributes correlation matrix
 
->>>
-from data_science_utilities import data_science_utilities
-data_science_utilities.plot_top_corelation_matrix(data, target, k=10, cmap='YlGnBu')
+.. code-block:: console
+
+    $ from data_science_utilities import data_science_utilities
+    $
+    $ data_science_utilities.plot_top_corelation_matrix(data, target, k=10, cmap='YlGnBu')
 
 
 * Plotting attributes by scatter chart
 
->>>
-from data_science_utilities import data_science_utilities
-data_science_utilities.plot_scatter(data, column_name, target)
+.. code-block:: console
+
+    $ from data_science_utilities import data_science_utilities
+    $
+    $ data_science_utilities.plot_scatter(data, column_name, target)
 
 
 * Plotting attributes by box bar
 
->>>
-from data_science_utilities import data_science_utilities
-data_science_utilities.plot_box(data, column_name, target)
+.. code-block:: console
+
+    $ from data_science_utilities import data_science_utilities
+    $
+    $ data_science_utilities.plot_box(data, column_name, target)
 
 
 * Plotting category by box bar
 
->>>
-from data_science_utilities import data_science_utilities
-data_science_utilities.plot_category_columns(data, limit_bars=10)
+.. code-block:: console
+
+    $ from data_science_utilities import data_science_utilities
+    $
+    $ data_science_utilities.plot_category_columns(data, limit_bars=10)
 
 
 * Generate a simple plot of the test and traning learning curve
 
->>>
-from data_science_utilities import data_science_utilities
-data_science_utilities.plot_learning_curve(estimator, title, X, y, ylim=None,
-                    cv=None, train_sizes=np.linspace(.1, 1.0, 5))
+.. code-block:: console
+
+$ from data_science_utilities import data_science_utilities
+$
+$ data_science_utilities.plot_learning_curve(estimator, title, X, y, ylim=None,
+$                     cv=None, train_sizes=np.linspace(.1, 1.0, 5))
 
 
 Credits
