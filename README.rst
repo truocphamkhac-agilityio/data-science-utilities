@@ -10,7 +10,7 @@ Data Science Utilities
         :target: https://travis-ci.org/truocphamkhac/data_science_utilities
 
 .. image:: https://readthedocs.org/projects/data-science-utilities/badge/?version=latest
-        :target: https://data-science-utilities.readthedocs.io/en/latest/?badge=latest
+        :target: http://data-science-utilities-python.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 
@@ -20,7 +20,7 @@ Data Science utilities in python.
 
 
 * Free software: MIT license
-* Documentation: https://data-science-utilities.readthedocs.io.
+* Documentation: http://data-science-utilities-python.readthedocs.io.
 
 
 Features
@@ -28,13 +28,13 @@ Features
 
 * Missing Data Statistic
 
->>> 
-from data_science_utilities import data_science_utilities
-# make statistic
-missing_data = data_science_utilities.missing_data_stats(df)
-# display statistic
-missing_data
+.. code-block:: console
 
+    $ from data_science_utilities import data_science_utilities
+    $ # make statistic
+    $ missing_data = data_science_utilities.missing_data_stats(df)
+    $ # display statistic
+    $ missing_data
 
 * Read CSV files from path
 
