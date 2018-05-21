@@ -1,5 +1,5 @@
 Welcome to Data Science Utilities's documentation!
-======================================
+==================================================
 
 .. toctree::
    :maxdepth: 2
