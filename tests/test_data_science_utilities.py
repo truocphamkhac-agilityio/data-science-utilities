@@ -7,7 +7,7 @@
 import unittest
 from click.testing import CliRunner
 
-from data_science_utilities import data_science_utilities
+# from data_science_utilities import data_science_utilities
 from data_science_utilities import cli
 
 
