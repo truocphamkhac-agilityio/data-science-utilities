@@ -6,8 +6,8 @@ Data Science Utilities
 .. image:: https://img.shields.io/pypi/v/data_science_utilities.svg
         :target: https://pypi.python.org/pypi/data_science_utilities
 
-.. image:: https://img.shields.io/travis/truocphamkhac/data_science_utilities.svg
-        :target: https://travis-ci.org/truocphamkhac/data_science_utilities
+.. image:: https://img.shields.io/travis/truocphamkhac/data-science-utilities.svg
+        :target: https://travis-ci.org/truocphamkhac/data-science-utilities
 
 .. image:: https://readthedocs.org/projects/data-science-utilities/badge/?version=latest
         :target: http://data-science-utilities-python.readthedocs.io/en/latest/?badge=latest
