@@ -2,7 +2,7 @@
 History
 =======
 
-0.2.0 (2018-05-14)
+0.2.1 (2018-05-14)
 ------------------
 
 * Adds utils about visualization.
