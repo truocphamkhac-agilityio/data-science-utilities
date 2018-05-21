@@ -24,80 +24,108 @@ Data Science utilities in python.
 
 
 Features
---------
+========
 
-* Missing Data Statistic::
+Missing Data Statistic
+----------------------
 
-    >>> from data_science_utilities import data_science_utilities
-    >>>
-    >>> # make statistic
-    >>> missing_data = data_science_utilities.missing_data_stats(df)
-    >>> # display statistic
-    >>> missing_data
+.. code:: python
 
+    from data_science_utilities import data_science_utilities
 
-* Read CSV files from path::
+    # make statistic
+    missing_data = data_science_utilities.missing_data_stats(df)
 
-    >>> from data_science_utilities import data_science_utilities
-    >>>
-    >>> train_path = '../data/raw/train.csv'
-    >>> test_path = '../data/raw/test.csv'
-    >>>
-    >>> X_train, X_test = data_science_utilities.read_csv_files(train_path, test_path)
+    # display statistic
+    missing_data
 
 
-* Plotting distribution normal::
+Read CSV files from path
+------------------------
 
-    >>> from data_science_utilities import data_science_utilities
-    >>>
-    >>> data_science_utilities.plot_dist_norm(dist, 'distribution normal')
+.. code:: python
 
+    from data_science_utilities import data_science_utilities
 
-* Plotting correlation matrix::
+    train_path = '../data/raw/train.csv'
+    test_path = '../data/raw/test.csv'
 
-    >>> from data_science_utilities import data_science_utilities
-    >>>
-    >>> data_science_utilities.plot_corelation_matrix(data)
-
-
-* Plotting top attributes correlation matrix::
-
-    >>> from data_science_utilities import data_science_utilities
-    >>>
-    >>> data_science_utilities.plot_top_corelation_matrix(data, target, k=10, cmap='YlGnBu')
+    X_train, X_test = data_science_utilities.read_csv_files(train_path, test_path)
 
 
-* Plotting attributes by scatter chart::
+Plotting distribution normal
+----------------------------
 
-    >>> from data_science_utilities import data_science_utilities
-    >>>
-    >>> data_science_utilities.plot_scatter(data, column_name, target)
+.. code:: python
 
+    from data_science_utilities import data_science_utilities
 
-* Plotting attributes by box bar::
-
-    >>> from data_science_utilities import data_science_utilities
-    >>>
-    >>> data_science_utilities.plot_box(data, column_name, target)
+    data_science_utilities.plot_dist_norm(dist, 'distribution normal')
 
 
-* Plotting category by box bar::
+Plotting correlation matrix
+---------------------------
 
-    >>> from data_science_utilities import data_science_utilities
-    >>>
-    >>> data_science_utilities.plot_category_columns(data, limit_bars=10)
+.. code:: python
+
+    from data_science_utilities import data_science_utilities
+
+    data_science_utilities.plot_corelation_matrix(data)
 
 
-* Generate a simple plot of the test and traning learning curve::
+Plotting top attributes correlation matrix
+------------------------------------------
 
-    >>> from data_science_utilities import data_science_utilities
-    >>>
-    >>> data_science_utilities.plot_learning_curve(estimator, title, X, y, ylim=None,
-    >>>                     cv=None, train_sizes=np.linspace(.1, 1.0, 5))
+.. code:: python
+
+    from data_science_utilities import data_science_utilities
+
+    data_science_utilities.plot_top_corelation_matrix(data, target, k=10, cmap='YlGnBu')
+
+
+Plotting attributes by scatter chart
+------------------------------------
+
+.. code:: python
+
+    from data_science_utilities import data_science_utilities
+
+    data_science_utilities.plot_scatter(data, column_name, target)
+
+
+Plotting attributes by box bar
+------------------------------
+
+.. code:: python
+
+    from data_science_utilities import data_science_utilities
+
+    data_science_utilities.plot_box(data, column_name, target)
+
+
+Plotting category by box bar
+----------------------------
+
+.. code:: python
+
+    from data_science_utilities import data_science_utilities
+
+    data_science_utilities.plot_category_columns(data, limit_bars=10)
+
+
+Generate a simple plot of the test and traning learning curve
+-------------------------------------------------------------
+
+.. code:: python
+
+    from data_science_utilities import data_science_utilities
+
+    data_science_utilities.plot_learning_curve(estimator, title, X, y, ylim=None,
+                        cv=None, train_sizes=np.linspace(.1, 1.0, 5))
 
 
 Credits
--------
+=======
 
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 
