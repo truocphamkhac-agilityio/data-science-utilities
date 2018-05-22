@@ -1,0 +1,8 @@
+matplotlib==2.2.2
+setuptools==39.0.1
+pandas==0.22.0
+numpy==1.14.2
+seaborn==0.8.1
+click==6.7
+scipy==1.0.1
+scikit_learn==0.19.1
