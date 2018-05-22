@@ -145,12 +145,31 @@ def plot_box(data, column_name, target):
 
 
 def plot_category_columns(data, limit_bars=10):
+    # Quick plotting all non-numeric columns in data frame.
+
     category_cols = data.select_dtypes(include=['object'])
+    max_length_labels = 60
+    base_figure_height = 6
 
     for col in category_cols:
-        plt.figure(figsize=(12, 6))
+        # List all labels of the current column.
+        labels = data[col].unique()
+
+        # convert nan type
+        labels = [x if type(x) is str else 'nan' for x in labels]
+
+        if len(labels) > 20:
+            # When there are too many labels, we need to increase the
+            # figure size.
+            plt.figure(figsize=(12, base_figure_height * len(labels) / 20))
+        else:
+            plt.figure(figsize=(12, 6))
+
         if len(data[col].unique()) < limit_bars:
-            sns.countplot(x=col, data=data)
+            s = sns.countplot(x=col, data=data)
+            # Rorate the text 45 degrees of they are too long.
+            if len(''.join(labels)) > max_length_labels:
+                s.set_xticklabels(s.get_xticklabels(), rotation=45)
         else:
             sns.countplot(y=col, data=data)
 
