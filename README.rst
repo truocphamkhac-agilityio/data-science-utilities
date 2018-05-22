@@ -122,6 +122,16 @@ Generate a simple plot of the test and traning learning curve
                         cv=None, train_sizes=np.linspace(.1, 1.0, 5))
 
 
+Generate a preview of data
+--------------------------
+
+.. code:: python
+
+    from ml_utilities import ml_utilities
+
+    ml_utilities.generate_preview(data)
+
+
 Development
 ===========
 

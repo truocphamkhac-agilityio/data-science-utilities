@@ -204,3 +204,20 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,
     if ylim:
         plt.ylim(ylim)
     plt.title(title)
+
+
+def generate_preview(data):
+    """
+    Make a preview dataframe from the data shows the `type`,
+    `null_count` and `first_value` of every columns on data.
+    """
+    previews = pd.DataFrame(data.dtypes, columns=['dtypes'])
+    previews['first_value'] = data.loc[0].values
+    previews['null_count'] = data.isnull().sum()
+    previews['null_ratio'] = (data.isnull().sum() / data.isnull().count()) * 100
+
+    # Reset the index of new dataframe.
+    previews = previews.reset_index()
+    previews = previews.sort_index()
+
+    return previews
