@@ -225,6 +225,54 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,
     plt.title(title)
 
 
+def plot_stats(data, feature, label_rotation=False, horizontal_layout=True):
+    """Plot 2 charts of category column type by counting values.
+
+    Arguments:
+        data (pd.DataFrame): The dataframe need to check
+        feature (str): The name of column.
+
+    Usage:
+        from ml-utilities import ml-utilities
+        # make statistic
+        missing_data = ml-utilities.missing_data_stats(df)
+        # display missing data
+        missing_data
+    """
+    temp = data[feature].value_counts()
+    df1 = pd.DataFrame({feature: temp.index, 'Number of contracts': temp.values})
+
+    # List all labels of the current column.
+    labels = data[feature].unique()
+
+    # convert nan type
+    labels = [x if type(x) is str else 'nan' for x in labels]
+
+    if len(labels) > 3:
+        label_rotation = True
+
+    # Calculate the percentage of target=1 per category value
+    cat_perc = data[[feature, 'TARGET']].groupby([feature], as_index=False).mean()
+    cat_perc.sort_values(by='TARGET', ascending=False, inplace=True)
+
+    if(horizontal_layout):
+        fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(12, 6))
+    else:
+        fig, (ax1, ax2) = plt.subplots(nrows=2, figsize=(12, 14))
+    sns.set_color_codes("pastel")
+    s = sns.barplot(ax=ax1, x=feature, y="Number of contracts", data=df1)
+    if(label_rotation):
+        s.set_xticklabels(s.get_xticklabels(), rotation=90)
+
+    s = sns.barplot(ax=ax2, x=feature, y='TARGET', order=cat_perc[feature], data=cat_perc)
+    if(label_rotation):
+        s.set_xticklabels(s.get_xticklabels(), rotation=90)
+    plt.ylabel('Percent of target with value 1 [%]', fontsize=10)
+    plt.tick_params(axis='both', which='major', labelsize=10)
+
+    plt.show()
+
+
 def generate_preview(data):
     """
     Make a preview dataframe from the data shows the `type`,
