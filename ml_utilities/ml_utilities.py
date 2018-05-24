@@ -12,6 +12,9 @@ from scipy.stats import norm
 
 from sklearn.model_selection import learning_curve
 
+import warnings
+warnings.filterwarnings('ignore')
+
 
 def missing_data_stats(df):
     """Check remaining missing value and print out if any.
