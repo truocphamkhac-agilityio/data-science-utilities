@@ -290,3 +290,33 @@ def generate_preview(data):
     previews = previews.sort_index()
 
     return previews
+
+def compare_train_test_category(train, test):
+    """
+    Make comparation between train and test data for category feature.
+
+    Arguments:
+        train (pd.DataFrame): Application train data frame
+        test (pd.DataFrame): Application test data frame
+    """
+    full = pd.concat([train, test], ignore_index=True)
+    category_features = full.select_dtypes(include=['object']).columns
+    train_len = len(train)
+    test_len = len(test)
+    for feature in category_features:
+        cat_values = full[feature].unique()
+        percentage = {'train': {}, 'test': {}}
+        for value in cat_values:
+            try:
+                train_groupby = train.groupby(feature)[feature].count()
+                percentage['train'][value] = round(train_groupby[value] / train_len, 2)
+            except:
+                percentage['train'][value] = 0
+
+            try:
+                test_groupby = test.groupby(feature)[feature].count()
+                percentage['test'][value] = round(test_groupby[value] / test_len, 2)
+            except:
+                percentage['test'][value] = 0
+
+        pd.DataFrame(percentage).plot(kind='bar', title=feature)
