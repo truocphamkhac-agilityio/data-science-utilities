@@ -319,4 +319,10 @@ def compare_train_test_category(train, test):
             except:
                 percentage['test'][value] = 0
 
-        pd.DataFrame(percentage).plot(kind='bar', title=feature)
+        base_figure_height = 6
+        plot_figsize = (12, base_figure_height)
+        if len(cat_values) >= 15:
+            plot_figsize = (12, base_figure_height * len(cat_values) / 15)
+            pd.DataFrame(percentage).plot(kind='barh', title=feature, fontsize=12, figsize=plot_figsize)
+        else:
+            pd.DataFrame(percentage).plot(kind='bar', title=feature, fontsize=12, figsize=plot_figsize, rot=45)
