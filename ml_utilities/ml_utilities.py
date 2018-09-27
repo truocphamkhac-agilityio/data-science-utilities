@@ -160,7 +160,9 @@ def plot_category_columns(data, category_cols=None, limit_bars=10):
         ml_utilities.plot_category_columns(data, categrory_cols=['col1', 'col2'], limit_bars=10)
     """
 
-    category_cols = data.select_dtypes(include=['object'])
+    if(category_cols==None):
+        category_cols = data.select_dtypes(include=['object'])
+
     max_length_labels = 60
     base_figure_height = 6
 
