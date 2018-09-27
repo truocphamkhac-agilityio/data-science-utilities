@@ -146,8 +146,19 @@ def plot_box(data, column_name, target):
     fig.axis(ymin=0, ymax=800000)
 
 
-def plot_category_columns(data, limit_bars=10):
-    # Quick plotting all non-numeric columns in data frame.
+def plot_category_columns(data, category_cols=None, limit_bars=10):
+    """
+    Quick plotting all non-numeric columns in data frame.
+
+    Arguments:
+        data (pd.DataFrame): The dataframe need to check
+        category_cols (string[]): The list of category columns need to check
+        limt_bars: The maxium bar for horizontal bar chart
+
+    Usage:
+        from ml_utilities import ml_utilities
+        ml_utilities.plot_category_columns(data, categrory_cols=['col1', 'col2'], limit_bars=10)
+    """
 
     category_cols = data.select_dtypes(include=['object'])
     max_length_labels = 60
