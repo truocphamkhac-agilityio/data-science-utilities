@@ -49,6 +49,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://gitlab.asoft-python.com/bgh/data-science/ml-utilities',
-    version='1.0.1',
+    version='1.0.2',
     zip_safe=False
 )
