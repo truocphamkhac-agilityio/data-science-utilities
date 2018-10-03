@@ -2,6 +2,12 @@
 History
 =======
 
+1.0.2 (2018-10-03)
+------------------
+
+* Update categorical feature plotting chart.
+
+
 1.0.1 (2018-05-29)
 ------------------
 
